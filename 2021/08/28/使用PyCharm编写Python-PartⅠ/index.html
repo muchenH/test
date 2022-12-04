@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>使用PyCharm编写Python.PartⅠ | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="PyCharm 的初始设置（知道）目标 恢复 PyCharm 的初始设置 第一次启动 PyCharm 新建一个 Python 项目 设置 PyCharm 的字体显示 PyCharm 的升级以及其他  PyCharm 的官方网站地址是：https:&#x2F;&#x2F;www.jetbrains.com&#x2F;pycharm&#x2F; 01. 恢复 PyCharm 的初始设置PyCharm 的 配置信息 是保存在 用户家目录下 的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用PyCharm编写Python.PartⅠ">
+<meta property="og:url" content="http://example.com/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="PyCharm 的初始设置（知道）目标 恢复 PyCharm 的初始设置 第一次启动 PyCharm 新建一个 Python 项目 设置 PyCharm 的字体显示 PyCharm 的升级以及其他  PyCharm 的官方网站地址是：https:&#x2F;&#x2F;www.jetbrains.com&#x2F;pycharm&#x2F; 01. 恢复 PyCharm 的初始设置PyCharm 的 配置信息 是保存在 用户家目录下 的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-28T14:29:59.000Z">
+<meta property="article:modified_time" content="2021-09-10T09:39:07.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '使用PyCharm编写Python.PartⅠ',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-10 17:39:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用PyCharm编写Python.PartⅠ</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-28T14:29:59.000Z" title="Created 2021-08-28 22:29:59">2021-08-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-09-10T09:39:07.000Z" title="Updated 2021-09-10 17:39:07">2021-09-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python/">Python</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python/PyCharm/">PyCharm</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="使用PyCharm编写Python.PartⅠ"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="PyCharm-的初始设置（知道）"><a href="#PyCharm-的初始设置（知道）" class="headerlink" title="PyCharm 的初始设置（知道）"></a>PyCharm 的初始设置（知道）</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>恢复 PyCharm 的初始设置</li>
+<li>第一次启动 PyCharm</li>
+<li>新建一个 Python 项目</li>
+<li>设置 PyCharm 的字体显示</li>
+<li>PyCharm 的升级以及其他</li>
+</ul>
+<p>PyCharm 的官方网站地址是：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a></p>
+<h2 id="01-恢复-PyCharm-的初始设置"><a href="#01-恢复-PyCharm-的初始设置" class="headerlink" title="01. 恢复 PyCharm 的初始设置"></a>01. 恢复 PyCharm 的初始设置</h2><p><code>PyCharm</code> 的 <strong>配置信息</strong> 是保存在 <strong>用户家目录下</strong> 的 <code>.PyCharmxxxx.x</code> 目录下的，<code>xxxx.x</code> 表示当前使用的 <code>PyCharm</code> 的版本号</p>
+<p>如果要恢复 <code>PyCharm</code> 的初始设置，可以按照以下步骤进行：</p>
+<ul>
+<li><ol>
+<li>关闭正在运行的 <code>PyCharm</code></li>
+</ol>
+</li>
+<li><ol start="2">
+<li>在终端中执行以下终端命令，删除 <code>PyCharm</code> 的配置信息目录：</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">rm</span> -r ~/.PyCharm2016.3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><ol start="3">
+<li>重新启动 <code>PyCharm</code></li>
+</ol>
+</li>
+</ul>
+<h2 id="02-第一次启动-PyCharm"><a href="#02-第一次启动-PyCharm" class="headerlink" title="02. 第一次启动 PyCharm"></a>02. 第一次启动 PyCharm</h2><ol>
+<li>导入配置信息</li>
+<li>选择许可协议</li>
+<li>配置初始界面</li>
+</ol>
+<h3 id="2-1-导入配置信息"><a href="#2-1-导入配置信息" class="headerlink" title="2.1 导入配置信息"></a>2.1 导入配置信息</h3><ul>
+<li>在第一次启动 <code>PyCharm</code> 时，会首先提示用户是否导入 <strong>之前的配置信息</strong></li>
+<li>如果是第一次使用，直接点击 <strong>OK</strong> 按钮</li>
+</ul>
+<p><img src="/media/14950463298537/001_PyCharm%E5%AF%BC%E5%85%A5%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF.png" alt="001_PyCharm导入配置信息-w603"></p>
+<h3 id="2-2-选择许可协议"><a href="#2-2-选择许可协议" class="headerlink" title="2.2 选择许可协议"></a>2.2 选择许可协议</h3><ul>
+<li>PyCharm 是一个付费软件，购买费用为 <strong>199$ &#x2F; 年</strong> 或者 <strong>19.90$ ／ 月</strong></li>
+<li>不过 PyCharm 提供了对 <strong>学生和教师免费使用的版本</strong><ul>
+<li>下载地址是：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm-edu/download/#section=linux">https://www.jetbrains.com/pycharm-edu/download/#section=linux</a></li>
+</ul>
+</li>
+<li>商业版本会提示输入注册信息，或者选择免费评估</li>
+</ul>
+<p><img src="/media/14950463298537/002_%E6%BF%80%E6%B4%BB%E8%AE%B8%E5%8F%AF%E8%AF%81.png" alt="002_激活许可证-w495"></p>
+<h3 id="2-3-PyCharm-的配置初始界面"><a href="#2-3-PyCharm-的配置初始界面" class="headerlink" title="2.3 PyCharm 的配置初始界面"></a>2.3 PyCharm 的配置初始界面</h3><ul>
+<li>在初始配置界面，可以通过 <code>Editor colors and fonts</code> 选择 <strong>编辑器的配色方案</strong></li>
+</ul>
+<p><img src="/media/14950463298537/003_PyCharm%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2.png" alt="003_PyCharm初始配置界面-w491"></p>
+<h3 id="2-4-欢迎界面"><a href="#2-4-欢迎界面" class="headerlink" title="2.4 欢迎界面"></a>2.4 欢迎界面</h3><ul>
+<li>所有基础配置工作结束之后，就可以看到 <code>PyCharm</code> 的 <strong>欢迎界面</strong>了，通过 <strong>欢迎界面</strong> 就可以开始开发 Python 项目了</li>
+</ul>
+<p><img src="/media/14950463298537/004_PyCharm%E6%AC%A2%E8%BF%8E%E9%A1%B5%E9%9D%A2.png" alt="004_PyCharm欢迎页面-w664"></p>
+<h2 id="03-新建-x2F-打开一个-Python-项目"><a href="#03-新建-x2F-打开一个-Python-项目" class="headerlink" title="03. 新建&#x2F;打开一个 Python 项目"></a>03. 新建&#x2F;打开一个 Python 项目</h2><h3 id="3-1-项目简介"><a href="#3-1-项目简介" class="headerlink" title="3.1 项目简介"></a>3.1 项目简介</h3><ul>
+<li>开发 <strong>项目</strong> 就是开发一个 <strong>专门解决一个复杂业务功能的软件</strong></li>
+<li>通常每 <strong>一个项目</strong> 就具有一个 <strong>独立专属的目录</strong>，用于保存 <strong>所有和项目相关的文件</strong><ul>
+<li>一个项目通常会包含 <strong>很多源文件</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-打开-Python-项目"><a href="#3-2-打开-Python-项目" class="headerlink" title="3.2 打开 Python 项目"></a>3.2 打开 Python 项目</h3><ul>
+<li>直接点击 <strong>Open</strong> 按钮，然后浏览到之前保存 <strong>Python 文件的目录</strong>，既可以打开项目</li>
+<li>打开之后，会在目录下新建一个 <code>.idea</code> 的目录，用于保存 <strong>项目相关的信息</strong>，例如：<strong>解释器版本</strong>、<strong>项目包含的文件</strong>等等</li>
+<li>第一次打开项目，需要耐心等待 <code>PyCharm</code> 对项目<strong>进行初始设置</strong></li>
+</ul>
+<p><img src="/media/14950463298537/005_%E6%89%93%E5%BC%80%E5%B7%B2%E6%9C%89Python%E9%A1%B9%E7%9B%AE.png" alt="005_打开已有Python项目-w423"></p>
+<h4 id="设置项目使用的解释器版本"><a href="#设置项目使用的解释器版本" class="headerlink" title="设置项目使用的解释器版本"></a>设置项目使用的解释器版本</h4><ul>
+<li>打开的目录如果不是由 <code>PyCharm</code> 建立的项目目录，<strong>有的时候</strong> 使用的解释器版本是 <code>Python 2.x</code> 的，需要<strong>单独设置解释器的版本</strong></li>
+<li>通过 <strong>File</strong> &#x2F; <strong>Settings…</strong> 可以打开设置窗口，如下图所示：</li>
+</ul>
+<p><img src="/media/14950463298537/006_%E9%80%89%E6%8B%A9%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%A7%A3%E9%87%8A%E5%99%A8%E7%89%88%E6%9C%AC.png" alt="006_选择项目的解释器版本-w975"></p>
+<h3 id="3-3-新建项目"><a href="#3-3-新建项目" class="headerlink" title="3.3 新建项目"></a>3.3 新建项目</h3><h4 id="1-命名规则"><a href="#1-命名规则" class="headerlink" title="1) 命名规则"></a>1) 命名规则</h4><ul>
+<li><p>以后 <strong>项目名</strong> 前面都以 <strong>数字编号</strong>，<strong>随着知识点递增，编号递增</strong></p>
+<ul>
+<li>例如：<strong>01_Python 基础</strong>、<strong>02_分支</strong>、<strong>03_循环</strong>…</li>
+</ul>
+</li>
+<li><p>每个项目下的 <strong>文件名</strong> 都以 <code>hm_xx_知识点</code> 方式来命名</p>
+<ul>
+<li>其中 <strong>xx</strong> 是演练文件的序号</li>
+</ul>
+</li>
+<li><p>注意</p>
+<ul>
+<li><ol>
+<li>命名文件名时建议只使用 <strong>小写字母</strong>、<strong>数字</strong> 和 <strong>下划线</strong></li>
+</ol>
+</li>
+<li><ol start="2">
+<li><strong>文件名不能以数字开始</strong></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>通过 <strong>欢迎界面</strong> 或者菜单 <strong>File</strong> &#x2F; <strong>New Project</strong> 可以新建项目</p>
+</li>
+</ul>
+<h4 id="2-演练步骤"><a href="#2-演练步骤" class="headerlink" title="2) 演练步骤"></a>2) 演练步骤</h4><ul>
+<li>新建 <code>01_Python基础</code> 项目，使用 <strong>Python 3.x 解释器</strong></li>
+<li>在项目下新建 <code>hm_01_hello.py</code> Python 文件</li>
+<li>编写 <code>print(&quot;Hello Python&quot;)</code> 代码</li>
+</ul>
+<h2 id="04-设置-PyCharm-的字体显示"><a href="#04-设置-PyCharm-的字体显示" class="headerlink" title="04. 设置 PyCharm 的字体显示"></a>04. 设置 PyCharm 的字体显示</h2><p><img src="/media/14950463298537/007_PyCharm%E8%AE%BE%E7%BD%AE%E7%BC%96%E8%BE%91%E5%99%A8%E5%AD%97%E4%BD%93.png" alt="007_PyCharm设置编辑器字体-w500"></p>
+<p><img src="/media/14950463298537/008_PyCharm%E8%AE%BE%E7%BD%AE%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%AD%97%E4%BD%93.png" alt="008_PyCharm设置控制台字体-w500"></p>
+<h2 id="05-PyCharm-的升级以及其他"><a href="#05-PyCharm-的升级以及其他" class="headerlink" title="05. PyCharm 的升级以及其他"></a>05. PyCharm 的升级以及其他</h2><blockquote>
+<p>PyCharm 提供了对 <strong>学生和教师免费使用的版本</strong></p>
+</blockquote>
+<ul>
+<li>教育版下载地址：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm-edu/download/#section=linux">https://www.jetbrains.com/pycharm-edu/download/#section=linux</a></li>
+<li>专业版下载地址：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/download/#section=linux">https://www.jetbrains.com/pycharm/download/#section=linux</a></li>
+</ul>
+<h3 id="5-1-安装和启动步骤"><a href="#5-1-安装和启动步骤" class="headerlink" title="5.1 安装和启动步骤"></a>5.1 安装和启动步骤</h3><ul>
+<li><ol>
+<li>执行以下终端命令，解压缩下载后的安装包</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf pycharm-professional-2017.1.3.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><ol start="2">
+<li>将解压缩后的目录移动到 <code>/opt</code> 目录下，可以方便其他用户使用</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p><code>/opt</code> 目录用户存放给主机额外安装的软件</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo <span class="built_in">mv</span> pycharm-2017.1.3/ /opt/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><ol start="3">
+<li>切换工作目录</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /opt/pycharm-2017.1.3/bin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><ol start="4">
+<li>启动 <code>PyCharm</code></li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./pycharm.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-设置专业版启动图标"><a href="#5-2-设置专业版启动图标" class="headerlink" title="5.2 设置专业版启动图标"></a>5.2 设置专业版启动图标</h3><ul>
+<li>在<strong>专业版</strong>中，选择菜单 <strong>Tools</strong> &#x2F; <strong>Create Desktop Entry…</strong> 可以设置任务栏启动图标<ul>
+<li>注意：设置图标时，需要勾选 <code>Create the entry for all users</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/media/14950463298537/009_%E5%88%9B%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87.png" alt="009_创建桌面图标-w657"></p>
+<h3 id="5-3-卸载之前版本的-PyCharm"><a href="#5-3-卸载之前版本的-PyCharm" class="headerlink" title="5.3 卸载之前版本的 PyCharm"></a>5.3 卸载之前版本的 PyCharm</h3><h4 id="1-程序安装"><a href="#1-程序安装" class="headerlink" title="1) 程序安装"></a>1) 程序安装</h4><ul>
+<li><ol>
+<li><strong>程序文件目录</strong></li>
+</ol>
+<ul>
+<li>将安装包解压缩，并且移动到 <code>/opt</code> 目录下</li>
+<li><strong>所有的相关文件都保存在解压缩的目录中</strong></li>
+</ul>
+</li>
+<li><ol start="2">
+<li><strong>配置文件目录</strong></li>
+</ol>
+<ul>
+<li>启动 <code>PyCharm</code> 后，会在用户家目录下建立一个 <code>.PyCharmxxx</code> 的隐藏目录</li>
+<li><strong>保存 <code>PyCharm</code> 相关的配置信息</strong></li>
+</ul>
+</li>
+<li><ol start="3">
+<li><strong>快捷方式文件</strong></li>
+</ol>
+<ul>
+<li><code>/usr/share/applications/jetbrains-pycharm.desktop</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在 <code>ubuntu</code> 中，应用程序启动的快捷方式通常都保存在 <code>/usr/share/applications</code> 目录下</p>
+</blockquote>
+<h4 id="2-程序卸载"><a href="#2-程序卸载" class="headerlink" title="2) 程序卸载"></a>2) 程序卸载</h4><ul>
+<li><p>要卸载 <code>PyCharm</code> 只需要做以下两步工作：</p>
+</li>
+<li><ol>
+<li>删除解压缩目录</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo <span class="built_in">rm</span> -r /opt/pycharm-2016.3.1/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><ol start="2">
+<li>删除家目录下用于保存配置信息的隐藏目录</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">rm</span> -r ~/.PyCharm2016.3/</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果不再使用 PyCharm 还需要将 <code>/usr/share/applications/</code> 下的 <code>jetbrains-pycharm.desktop</code> 删掉</p>
+</blockquote>
+<h3 id="5-4-教育版安装演练"><a href="#5-4-教育版安装演练" class="headerlink" title="5.4 教育版安装演练"></a>5.4 教育版安装演练</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 解压缩下载后的安装包</span></span><br><span class="line">$ tar -zxvf pycharm-edu-3.5.1.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 将解压缩后的目录移动到 `/opt` 目录下，可以方便其他用户使用</span></span><br><span class="line">$ sudo <span class="built_in">mv</span> pycharm-edu-3.5.1/ /opt/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 启动 `PyCharm`</span></span><br><span class="line">/opt/pycharm-edu-3.5.1/bin/pycharm.sh</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>后续课程<strong>都使用专业版本演练</strong></p>
+</blockquote>
+<h4 id="设置启动图标"><a href="#设置启动图标" class="headerlink" title="设置启动图标"></a>设置启动图标</h4><ul>
+<li><ol>
+<li>编辑快捷方式文件</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gedit /usr/share/applications/jetbrains-pycharm.desktop</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><ol start="3">
+<li>按照以下内容修改文件内容，需要注意<strong>指定正确的 <code>pycharm</code> 目录</strong></li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Version=1.0</span><br><span class="line">Type=Application</span><br><span class="line">Name=PyCharm</span><br><span class="line">Icon=/opt/pycharm-edu-3.5.1/bin/pycharm.png</span><br><span class="line">Exec=&quot;/opt/pycharm-edu-3.5.1/bin/pycharm.sh&quot; %f</span><br><span class="line">Comment=The Drive to Develop</span><br><span class="line">Categories=Development;IDE;</span><br><span class="line">Terminal=false</span><br><span class="line">StartupWMClass=jetbrains-pycharm</span><br></pre></td></tr></table></figure>
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A0/">http://example.com/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A1/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">使用PyCharm编写Python.PartⅡ</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/28/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%EF%BC%88%E4%BB%A5Ubuntu%E4%B8%BA%E4%BE%8B%EF%BC%89/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Linux常用命令（以Ubuntu为例）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/08/29/Python%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" title="Python学习路线"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-29</div><div class="title">Python学习路线</div></div></a></div><div><a href="/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A1/" title="使用PyCharm编写Python.PartⅡ"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-28</div><div class="title">使用PyCharm编写Python.PartⅡ</div></div></a></div><div><a href="/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A2/" title="使用PyCharm编写Python.PartⅢ"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-28</div><div class="title">使用PyCharm编写Python.PartⅢ</div></div></a></div><div><a href="/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A3/" title="使用PyCharm编写Python.PartⅣ"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-28</div><div class="title">使用PyCharm编写Python.PartⅣ</div></div></a></div><div><a href="/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A4/" title="使用PyCharm编写Python.PartⅤ"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-28</div><div class="title">使用PyCharm编写Python.PartⅤ</div></div></a></div><div><a href="/2021/08/28/%E4%BD%BF%E7%94%A8PyCharm%E7%BC%96%E5%86%99Python-Part%E2%85%A5/" title="使用PyCharm编写Python.PartⅥ"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-28</div><div class="title">使用PyCharm编写Python.PartⅥ</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PyCharm-%E7%9A%84%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE%EF%BC%88%E7%9F%A5%E9%81%93%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">PyCharm 的初始设置（知道）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E6%81%A2%E5%A4%8D-PyCharm-%E7%9A%84%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">01. 恢复 PyCharm 的初始设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8-PyCharm"><span class="toc-number">1.3.</span> <span class="toc-text">02. 第一次启动 PyCharm</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%AF%BC%E5%85%A5%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1 导入配置信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E9%80%89%E6%8B%A9%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.2 选择许可协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-PyCharm-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%88%9D%E5%A7%8B%E7%95%8C%E9%9D%A2"><span class="toc-number">1.3.3.</span> <span class="toc-text">2.3 PyCharm 的配置初始界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2"><span class="toc-number">1.3.4.</span> <span class="toc-text">2.4 欢迎界面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E6%96%B0%E5%BB%BA-x2F-%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AA-Python-%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.4.</span> <span class="toc-text">03. 新建&#x2F;打开一个 Python 项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">3.1 项目简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%89%93%E5%BC%80-Python-%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.2 打开 Python 项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%E7%9A%84%E8%A7%A3%E9%87%8A%E5%99%A8%E7%89%88%E6%9C%AC"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">设置项目使用的解释器版本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%96%B0%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.3 新建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">1) 命名规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%BC%94%E7%BB%83%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">2) 演练步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E8%AE%BE%E7%BD%AE-PyCharm-%E7%9A%84%E5%AD%97%E4%BD%93%E6%98%BE%E7%A4%BA"><span class="toc-number">1.5.</span> <span class="toc-text">04. 设置 PyCharm 的字体显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-PyCharm-%E7%9A%84%E5%8D%87%E7%BA%A7%E4%BB%A5%E5%8F%8A%E5%85%B6%E4%BB%96"><span class="toc-number">1.6.</span> <span class="toc-text">05. PyCharm 的升级以及其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%AE%89%E8%A3%85%E5%92%8C%E5%90%AF%E5%8A%A8%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.6.1.</span> <span class="toc-text">5.1 安装和启动步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E8%AE%BE%E7%BD%AE%E4%B8%93%E4%B8%9A%E7%89%88%E5%90%AF%E5%8A%A8%E5%9B%BE%E6%A0%87"><span class="toc-number">1.6.2.</span> <span class="toc-text">5.2 设置专业版启动图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E5%8D%B8%E8%BD%BD%E4%B9%8B%E5%89%8D%E7%89%88%E6%9C%AC%E7%9A%84-PyCharm"><span class="toc-number">1.6.3.</span> <span class="toc-text">5.3 卸载之前版本的 PyCharm</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="toc-number">1.6.3.1.</span> <span class="toc-text">1) 程序安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%A8%8B%E5%BA%8F%E5%8D%B8%E8%BD%BD"><span class="toc-number">1.6.3.2.</span> <span class="toc-text">2) 程序卸载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E6%95%99%E8%82%B2%E7%89%88%E5%AE%89%E8%A3%85%E6%BC%94%E7%BB%83"><span class="toc-number">1.6.4.</span> <span class="toc-text">5.4 教育版安装演练</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8%E5%9B%BE%E6%A0%87"><span class="toc-number">1.6.4.1.</span> <span class="toc-text">设置启动图标</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/29/docker%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4/" title="docker容器安装命令"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker容器安装命令"/></a><div class="content"><a class="title" href="/2022/10/29/docker%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4/" title="docker容器安装命令">docker容器安装命令</a><time datetime="2022-10-29T14:09:45.000Z" title="Created 2022-10-29 22:09:45">2022-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/25/Ubuntu%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker/" title="Ubuntu系统安装docker"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu系统安装docker"/></a><div class="content"><a class="title" href="/2022/10/25/Ubuntu%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker/" title="Ubuntu系统安装docker">Ubuntu系统安装docker</a><time datetime="2022-10-25T14:09:45.000Z" title="Created 2022-10-25 22:09:45">2022-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/25/Ubuntu%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98/" title="Ubuntu设置自动挂载硬盘"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu设置自动挂载硬盘"/></a><div class="content"><a class="title" href="/2022/10/25/Ubuntu%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98/" title="Ubuntu设置自动挂载硬盘">Ubuntu设置自动挂载硬盘</a><time datetime="2022-10-25T14:09:45.000Z" title="Created 2022-10-25 22:09:45">2022-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/24/Markdown%E8%AF%AD%E6%B3%95/" title="Markdown语法"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown语法"/></a><div class="content"><a class="title" href="/2022/10/24/Markdown%E8%AF%AD%E6%B3%95/" title="Markdown语法">Markdown语法</a><time datetime="2022-10-24T14:09:45.000Z" title="Created 2022-10-24 22:09:45">2022-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/24/%E5%9C%A8macOS%E4%B8%AD%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%86%99%E5%85%A5%E5%88%B0U%E7%9B%98/" title="在macOS中下载最新系统并写入到U盘"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在macOS中下载最新系统并写入到U盘"/></a><div class="content"><a class="title" href="/2022/10/24/%E5%9C%A8macOS%E4%B8%AD%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%B3%BB%E7%BB%9F%E5%B9%B6%E5%86%99%E5%85%A5%E5%88%B0U%E7%9B%98/" title="在macOS中下载最新系统并写入到U盘">在macOS中下载最新系统并写入到U盘</a><time datetime="2022-10-24T14:09:45.000Z" title="Created 2022-10-24 22:09:45">2022-10-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
